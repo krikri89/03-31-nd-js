@@ -9,7 +9,7 @@ console.log(`suma =`, s1);
 console.log('-----------------------------------');
 /*Parašyti funkciją, kuri priima du kintamuosius.Palygina tuos du skaičius ir grąžina rezultatą ar pirmas skaičius yra didesnis, ar antras, ar jie yra lygūs.*/
 function palyginimas (a, b) {
-   return a>b || a<b ||
+   return a>b 
 }
 let them = palyginimas(3, 4)
 console.log(them);
