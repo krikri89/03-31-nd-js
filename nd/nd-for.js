@@ -56,7 +56,7 @@ console.log(`n metai + palukanu €`, palukanos, `=`, i, `€`);
 
 console.log('10------------------------------------');
 /*Keliamieji metai turi 366 dienas, paprastieji–365. Visi metai, išskyrus šimtmečius, yra keliamieji, jie dalūs iš 4. Šimtmečių metai yra keliamieji, jeigu dalūs 400. Pvz.: 1600 metai yra keliamieji, nes dalūs iš 400, o 1700 –paprastieji. Raskite visus mūsų eros keliamuosius metus.*/
-for (i = 1900; i < 2022; i+=4) {
-  if(i%4 === 0 & (i*100)%400 ===0)
+for (i = 1000; i < 2022; i++) {
+  if(i%4 === 0 && i%400 === 0)
   console.log(`Kelemieji metai`, i);
 }
