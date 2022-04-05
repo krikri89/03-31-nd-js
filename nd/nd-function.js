@@ -61,7 +61,6 @@ console.log(suma9(5), `-->`, 15);
 /*Parašykite funkciją, kuri priimtų skaičių ir suskaičiuotų, iš kiek sveikų skaičių jos argumentas dalijasi be liekanos (išskyrus vienetą ir patį save).*/
 console.log("---6----------------");
 
-
 function skaiciusx(a) {
   for (i = 2; i < a; i++) {
     if (a % i === 0) {
@@ -72,18 +71,90 @@ function skaiciusx(a) {
 skaiciusx(14);
 
 /*Parašyti funkciją, kuri priimtų vieną kintamąjį-tekstą. Funkcija turi išvesti tekstą į ekraną ir dar papildomai parodyti jo ilgį(simbolių kiekį).*/
-console.log('---7---------------------');
+console.log("---7---------------------");
 
-function textas (t) {
-const b = t.length;
-for (let i=0; i<t.length; i++);
+function textas(t) {
+  const b = t.length;
+  for (let i = 0; i < t.length; i++);
   return `Zodis ${t} turi ${b} raides`;
-} 
-console.log(textas('dede'));
+}
+console.log(textas("dede"));
 
 /*Parašyti funkciją telefonoNumeris, kuri priima vieną kintamąjį–masyvą su 10 skaičių jame.Funkcija turi grąžinti telefono numerį tokiu formatu -"(XXX) XXX-XXXX".*/
-console.log('----8-----------------');
-let numeris = [8, 6, 3, 9, 1, 4, 5, 8, 9];
-function tel(n) {
+console.log("----8-----------------");
+
+function numSize(num) {
+  if (typeof num !== `object`) {
+    return `error`;
+  }
+  const stringNum = "" + num;
+
+  if (stringNum.length < 10) {
+    return `Number missing`;
+  }
+  // if (stringNum.length > 10 ) {
+  //   return `Too many numbers`
+  // }
+  if (num < 0) {
+    return `Number cannot be negative`;
+  }
+  for (let i = 0; i < stringNum.length; i++) {
+    const number = num[i];
+  }
+  return stringNum;
 }
-console.log(numeris);
+
+console.log(numSize([4, 6, 3, 9, 1, 4, 5, 8, 9, 5]));
+// console.log(numSize([2,4,5]));
+// console.log(numSize([409999999998374974]));
+// console.log(numSize([-983749748]));
+
+console.log("----9------------------s");
+/*Parašyti funkciją, kuri priimtų du kintamuosius-tekstus.Palyginti kuris tekstas yra ilgesnis.*/
+
+function palyginimas2(text1, text2) {
+  if (typeof text1 !== "string" || typeof text2 !== "string") {
+    return `Sorry, cannot proceed`;
+  }
+
+  if (text1.length > text2.length) {
+    return `first text is longer`;
+  }
+  if (text1.length < text2.length) {
+    return `Second text is longer`;
+  }
+  if ((text1.length = text2.length)) {
+    return `Both texts are equal`;
+  }
+}
+// console.log(palyginimas2('juoda kava be cukraus', 'juoda kava su pienu ir cukrum'));
+console.log(palyginimas2("juodas", "kava"));
+console.log(palyginimas2(29999, "kava"));
+console.log(palyginimas2([29999], "kava"));
+
+console.log("------10------------------");
+/*Parašyti funkciją, kuri priimtų vieną kintamąjį-tekstą.Suskaičiuoti, kiek tekste yra ‚a‘ raidžių.*/
+
+function aRaides(tekstas) {
+  if (typeof tekstas !== "string") {
+    return `this is not a text`;
+  }
+  if (tekstas === "") {
+    return `please fill in the gap`;
+  }
+
+  let raideA = 0;
+
+  if (tekstas) {
+    for (let i = 0; i < tekstas.length; i++) {
+      if (tekstas[i] === 'a'){
+        raideA++;
+      }
+    }
+  }
+
+  return raideA;
+}
+console.log(aRaides(12));
+console.log(aRaides(`saule`));
+console.log(aRaides('barakas'));
