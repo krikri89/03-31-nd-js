@@ -84,30 +84,24 @@ console.log(textas("dede"));
 console.log("----8-----------------");
 
 function numSize(num) {
-  if (typeof num !== `object`) {
-    return `error`;
+  if (!Array.isArray(num)) {
+    return `Kintamasis nera masyvas`;
   }
-  const stringNum = "" + num;
-
-  if (stringNum.length < 10) {
+  if (num.length !== 10) {
     return `Number missing`;
   }
-  // if (stringNum.length > 10 ) {
-  //   return `Too many numbers`
-  // }
-  if (num < 0) {
-    return `Number cannot be negative`;
+  for (let i = 0; i < 10; i++) {
+    if (typeof num[i] !== 'number'){
+      return 'Masyvo reiksmes turi buti skaiciai';
+    }
   }
-  for (let i = 0; i < stringNum.length; i++) {
-    const number = num[i];
-  }
-  return stringNum;
+  return `(${num[0]}${num[1]}${num[2]}) ${num[3]}${num[4]}${num[5]}-${num[6]}${num[7]}${num[8]}${num[9]}`;
 }
 
 console.log(numSize([4, 6, 3, 9, 1, 4, 5, 8, 9, 5]));
-// console.log(numSize([2,4,5]));
-// console.log(numSize([409999999998374974]));
-// console.log(numSize([-983749748]));
+console.log(numSize([2,4,5]));
+console.log(numSize('ABCD'));
+console.log(numSize([-983749748]));
 
 console.log("----9------------------s");
 /*Parašyti funkciją, kuri priimtų du kintamuosius-tekstus.Palyginti kuris tekstas yra ilgesnis.*/
@@ -127,7 +121,6 @@ function palyginimas2(text1, text2) {
     return `Both texts are equal`;
   }
 }
-// console.log(palyginimas2('juoda kava be cukraus', 'juoda kava su pienu ir cukrum'));
 console.log(palyginimas2("juodas", "kava"));
 console.log(palyginimas2(29999, "kava"));
 console.log(palyginimas2([29999], "kava"));
